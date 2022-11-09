@@ -23,6 +23,13 @@ const typeDefs = gql`
         createdAt: String
         username: String
     }
+
+    type Query {
+        users: [User]
+        user(username: String!): User
+        posts: [Post]
+        post(_id: ID!): Thought
+    }
 `;
 
 module.exports = typeDefs;
