@@ -25,8 +25,8 @@ const UserSchema = new Schema(
     },
     posts: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Thought",
+        type: Schema.Types.ObjectId,
+        ref: "Post",
       },
     ],
   },

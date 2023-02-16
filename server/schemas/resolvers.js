@@ -17,7 +17,7 @@ const resolvers = {
     //get all posts by user or all posts
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Post.find().sort({ createdAt: -1 });
+      return Post.find(params).sort({ createdAt: -1 });
     },
     // get post by id
     post: async (parent, { _id }) => {
