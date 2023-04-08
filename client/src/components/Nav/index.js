@@ -5,6 +5,10 @@ const Nav = () => {
     return(
         <header>
             <h1>Cancer Blog</h1>
+            <ul>
+                <li>Login</li>
+                <li>SignUp</li>
+            </ul>
 
         </header>
     )
