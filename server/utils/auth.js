@@ -13,6 +13,7 @@ module.exports = {
         let token = req.body.token || req.query.token || req.headers.authorization;
 
         // separates Bearer from tokenvalue
+        //console.log(token)
         if(req.headers.authorization) {
             token = token   
                 .split(' ')

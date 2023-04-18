@@ -1,4 +1,6 @@
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
+import Home from "./pages/Home";
 
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
@@ -23,9 +25,16 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div className="App">
-        <Nav />
-      </div>
+      <Router>
+        <div className="flex-col justify-start min-h-screen">
+          <Nav />
+          <div className="w-4/5 mx-auto">
+            <Routes>
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </div>
+        </div>
+      </Router>
     </ApolloProvider>
   );
 }
