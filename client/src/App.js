@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
-
+import Login from "./pages/Login"
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
 //InMemoryCache caches api response more efficiently
@@ -31,6 +31,7 @@ function App() {
           <div className="w-4/5 mx-auto">
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />}/>
             </Routes>
           </div>
         </div>

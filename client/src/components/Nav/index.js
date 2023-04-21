@@ -25,7 +25,7 @@ const Nav = () => {
           </>
         ) : (
           <>
-            <a href="/" className="mr-4 text-2xl">Log in</a>
+            <Link to="/login" className="mr-4 text-2xl">Log in</Link>
             <a href="/" className="text-2xl">
               Sign Up
             </a>
