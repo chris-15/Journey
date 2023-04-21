@@ -4,10 +4,18 @@ import Auth from '../utils/auth';
 
 
 const Login = () => {
+
+    const [login, { error }] = useMutation(LOGIN_USER);
+    const [formState, setFormState] = useState({ email: '', password: ''});
+
+
+
+
   return (
     <main>
         <div>
             <form>
+                <h2>Login</h2>
                <div>
                <label className='' htmlFor='email'>
                     Email:
