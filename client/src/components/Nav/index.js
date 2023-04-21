@@ -8,11 +8,11 @@ const Nav = () => {
 
   return (
     <header className="w-full h-[80px] flex justify-between items-center px-4 bg-red-500 text-white">
-        <h1>Cancer Blog</h1>
+        <h1 className='text-2xl'>Cancer Blog</h1>
         <nav>
         
-          <a className="mr-4">Log in</a>
-          <a href='/'>Sign Up</a>
+          <a className="mr-4 text-2xl">Log in</a>
+          <a href='/' className='text-2xl'>Sign Up</a>
           
         </nav>
     </header>
