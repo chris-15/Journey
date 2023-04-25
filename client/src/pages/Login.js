@@ -2,6 +2,8 @@ import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 
+import React, { useState } from "react";
+
 const Login = () => {
   const [login, { error }] = useMutation(LOGIN_USER);
   const [formState, setFormState] = useState({ email: "", password: "" });
@@ -62,7 +64,7 @@ const Login = () => {
               id="password"
               type="password"
               name="password"
-              value={formState.email}
+              value={formState.password}
               onChange={handleChange}
             />
           </div>
