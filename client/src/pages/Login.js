@@ -57,7 +57,7 @@ const Login = () => {
           </div>
 
           <div className="flex flex-col py-2">
-            <label className="">Password</label>
+            <label className="" htmlFor="password">Password</label>
             <input
               className="border-2 p-2"
               id="password"
