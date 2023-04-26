@@ -3,7 +3,7 @@ import Auth from "../../utils/auth";
 
 const Nav = () => {
   // create function here to show Nav bar if user is logged in
-  const logout = event => {
+  const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
@@ -25,10 +25,12 @@ const Nav = () => {
           </>
         ) : (
           <>
-            <Link to="/login" className="mr-4 text-2xl hover:underline">Log in</Link>
-            <a href="/" className="text-2xl hover:underline">
+            <Link to="/login" className="mr-4 text-2xl hover:underline">
+              Log in
+            </Link>
+            <Link to="/signup" className="text-2xl hover:underline">
               Sign Up
-            </a>
+            </Link>
           </>
         )}
       </nav>

@@ -4,6 +4,8 @@ import { setContext } from '@apollo/client/link/context';
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
+import Signup from "./pages/Signup";
+
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
 //InMemoryCache caches api response more efficiently
@@ -44,6 +46,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />}/>
+              <Route path="/signup" element={<Signup/>}/>
             </Routes>
           </div>
         </div>
