@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
-
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -91,7 +91,7 @@ const Signup = () => {
           </div>
 
           <div className="flex justify-around">
-            <p>Already have an account? <span className="font-bold hover:text-[#FF0022] hover:underline">Log in</span></p>
+            <p>Already have an account? <Link to="/login" className="font-bold hover:text-[#FF0022] hover:underline">LOG IN</Link></p>
           </div>
         </form>
         {error && <div>Something went wrong. Please try again!</div>}

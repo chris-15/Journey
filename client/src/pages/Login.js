@@ -1,8 +1,10 @@
+import React, { useState } from "react";
 import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
-import React, { useState } from "react";
+
 
 const Login = () => {
   const [login, { error }] = useMutation(LOGIN_USER);
@@ -76,8 +78,8 @@ const Login = () => {
           </div>
 
           <div className="flex justify-around">
-            <p>Not a member?</p>
-            <p className="font-bold hover:underline">Sign up now!</p>
+            <p>Don't have an account? <Link to="/signup" className="font-bold hover:text-[#FF0022] hover:underline">Sign up now!</Link></p>
+            
           </div>
         </form>
 
