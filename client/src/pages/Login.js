@@ -39,16 +39,15 @@ const Login = () => {
   };
 
   return (
-    <main>
-      <div>
-        <form onSubmit={handleFormSubmit}>
-          <h2>Login</h2>
-          <div>
-            <label className="" htmlFor="email">
-              Email:
-            </label>
+    <main className="grid grid-cols-1 h-screen w-full">
+      <div className="flex flex-col justify-center">
+        <form className="max-w-[400px] w-full mx-auto" onSubmit={handleFormSubmit}>
+          <h2 className="text-4xl font-bold text-center py-6">Cancer Blog</h2>
+
+          <div className="flex flex-col py-2">
+            <label className="" htmlFor="email">Email</label>
             <input
-              className=""
+              className="border-2 p-2"
               id="email"
               type="email"
               name="email"
@@ -57,10 +56,10 @@ const Login = () => {
             />
           </div>
 
-          <div>
-            <label className="">Password:</label>
+          <div className="flex flex-col py-2">
+            <label className="">Password</label>
             <input
-              className=""
+              className="border-2 p-2"
               id="password"
               type="password"
               name="password"
@@ -70,9 +69,14 @@ const Login = () => {
           </div>
 
           <div>
-            <button className="" type="submit">
+            <button className="border w-full my-5 py-2 bg-[#FF0022] text-white hover:underline" type="submit">
               Log In
             </button>
+          </div>
+
+          <div className="flex justify-around">
+            <p>Not a member?</p>
+            <p className="font-bold hover:underline">Sign up now!</p>
           </div>
         </form>
 

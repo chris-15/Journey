@@ -40,7 +40,7 @@ function App() {
       <Router>
         <div className="flex-col justify-start min-h-screen">
           <Nav />
-          <div className="w-4/5 mx-auto">
+          <div className="">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />}/>
