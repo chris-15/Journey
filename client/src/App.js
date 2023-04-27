@@ -5,6 +5,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Signup from "./pages/Signup";
+import SinglePost from "./pages/SinglePost";
 
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
@@ -16,6 +17,7 @@ import {
   InMemoryCache,
   createHttpLink,
 } from "@apollo/client";
+
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -47,6 +49,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />}/>
               <Route path="/signup" element={<Signup/>}/>
+              <Route path="/post/:id" element={<SinglePost/>}/>
             </Routes>
           </div>
         </div>
