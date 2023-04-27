@@ -6,7 +6,8 @@ const PostList = ({ posts, title }) => {
   }
   return (
     <div>
-      <h2 className="my-4 text-xl">{title}</h2>
+      <h2 className="py-6 text-4xl text-center">{title}</h2>
+      <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto">
       {posts &&
         posts.map((post) => (
           <div
@@ -24,6 +25,8 @@ const PostList = ({ posts, title }) => {
             </div>
           </div>
         ))}
+      </div>
+      
     </div>
   );
 };

@@ -12,8 +12,8 @@ const Home = () => {
     console.log(posts)
     
     return (
-        <main>
-            <div>
+        <main className='grid grid-cols-1 h-screen w-full'>
+            <div className=''>
                 {loading ? (
                     <div>Loading!</div>
                 ): (
