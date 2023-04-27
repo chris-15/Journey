@@ -12,14 +12,14 @@ const PostList = ({ posts, title }) => {
         posts.map((post) => (
           <div
             key={post._id}
-            className=" border-4 border-solid border-black p-2"
+            className=" border-4 border-solid border-black p-2 my-2"
           >
-            <h3>
-              {post.username} posted on {post.createdAt}
+            <h3 className="text-xl">
+            {post.postTitle}  
             </h3>
             <div>
               <Link to={`/post/${post._id}`}>
-                <p>{post.postText}</p>
+                <p>{post.username} posted on {post.createdAt}</p>
                 <p>Total Comments: {post.commentCount}</p>
               </Link>
             </div>
