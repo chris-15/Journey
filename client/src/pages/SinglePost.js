@@ -18,15 +18,20 @@ const SinglePost = () => {
   }
 
   return (
-    <main className="">
-        <div>
-            <p>{post.username} on {post.createdAt}</p>
+    <main className="grid grid-cols-1 h-screen w-full">
+      <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
+          <h2 className="text-2xl text-center">{post.postTitle}</h2>
+        
+        <div className="border-4 border-solid border-black p-2 my-2">
+          <p>
+            {post.username} on {post.createdAt}
+          </p>
+          <p>{post.postText}</p>
         </div>
-        <div>
-            <p>{post.postText}</p>
-        </div>
+          
+      </div>
     </main>
-  )
+  );
 };
 
 export default SinglePost;
