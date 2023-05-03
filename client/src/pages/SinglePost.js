@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { useQuery } from "@apollo/client";
 import { QUERY_POST } from "../utils/queries";
+import Auth from '../utils/auth';
 
 import CommentList from "../components/CommentList";
 import CommentForm  from "../components/CommentForm";
@@ -36,7 +37,7 @@ const SinglePost = () => {
       <CommentList comments={post.comments}/>
       </div>
       <div>
-        <CommentForm postId={post._id}/>
+        {Auth.loggedIn() ? <CommentForm postId={post._id} /> : <p>Sign in to leave a  comment</p>}
       </div>
     </main>
   );
