@@ -13,7 +13,9 @@ const CommentList = ({ comments }) => {
               <p>
                 {comment.username} on {comment.createdAt}
               </p>
-              <p key={comment._id}>{comment.commmentText}</p>
+              <p key={comment._id}>{comment.commentText}</p>
+              
+              
             </div>
           ))}
       </div>
