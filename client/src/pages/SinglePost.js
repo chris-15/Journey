@@ -4,7 +4,8 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_POST } from "../utils/queries";
 
-import { CommentList } from "../components/CommentList";
+import CommentList from "../components/CommentList";
+import CommentForm  from "../components/CommentForm";
 
 const SinglePost = () => {
   const { id: postId } = useParams();
@@ -33,6 +34,9 @@ const SinglePost = () => {
       </div>
       <div className="">
       <CommentList comments={post.comments}/>
+      </div>
+      <div>
+        <CommentForm postId={post._id}/>
       </div>
     </main>
   );

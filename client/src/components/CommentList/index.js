@@ -1,6 +1,6 @@
 import React from "react";
 
-export const CommentList = ({ comments }) => {
+const CommentList = ({ comments }) => {
   return (
     <div>
       <div>
@@ -20,3 +20,5 @@ export const CommentList = ({ comments }) => {
     </div>
   );
 };
+
+export default CommentList;
