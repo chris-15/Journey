@@ -5,29 +5,38 @@ const PostList = ({ posts, title }) => {
     return <h3>No Thoughts Yet</h3>;
   }
   return (
-    <div>
-      <h2 className="py-6 text-4xl text-center">{title}</h2>
-      <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto">
-      {posts &&
-        posts.map((post) => (
-          <div
-            key={post._id}
-            className=" border-4 border-solid border-black p-2 my-2"
-          >
-            <h3 className="text-xl">
-            {post.postTitle}  
-            </h3>
-            <div>
-              <Link to={`/post/${post._id}`}>
-                <p>{post.username} posted on {post.createdAt}</p>
-                <p>Total Comments: {post.commentCount}</p>
-              </Link>
-            </div>
-          </div>
-        ))}
+
+    <div className=" py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-center mb-8">{title}</h2>
+        <div className="grid gap-8 sm:grid-cols-2">
+          {posts &&
+            posts.map((post) => (
+              <div
+                key={post._id}
+                className="bg-white shadow-lg rounded-lg overflow-hidden"
+              >
+                <Link to={`/post/${post._id}`}>
+                  <div className="p-6">
+                    <h3 className="text-lg font-semibold mb-4">{post.postTitle}</h3>
+                    <div className="flex items-center text-sm text-gray-600">
+                      <p className="mr-2">
+                        <span className="font-semibold">{post.username}</span> posted on{' '}
+                        {post.createdAt}
+                      </p>
+                      <p className="border-l-2 pl-2 ml-2 text-gray-500">
+                        Total Comments: {post.commentCount}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            ))}
+        </div>
       </div>
-      
     </div>
+
+    
   );
 };
 

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 * {
   box-sizing: border-box;
   font-family: 'Rubik', sans-serif;
@@ -10,4 +11,5 @@
 html,
 body {
   min-height: 100%;
+  background-color: #EBEBEB;
 }
