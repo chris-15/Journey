@@ -13,7 +13,7 @@ const CommentForm = ({ postId }) => {
     if (event.target.value.length <= 500) {
       setCommentText(event.target.value);
       setCharacterCount(event.target.value.length);
-      console.log(commentText)
+      console.log(commentText);
     }
   };
 
@@ -32,19 +32,22 @@ const CommentForm = ({ postId }) => {
   };
 
   return (
-    <div>
-        <p>
-            Character Count: {characterCount}/500
-            {error && <span>Something went wrong!</span>}
-        </p>
+    <div className="max-w-[600px] w-full mx-auto">
+      <p className=" mb-2">
+        Character Count: {characterCount}/500
+        {error && <span>Something went wrong!</span>}
+      </p>
       <form onSubmit={handleFormSubmit}>
-        <div>
+        <div className="flex items-center mb-4">
           <textarea
+            className="flex-grow border-2 p-2 mr-2 resize-none h-32"
             placeholder="Add a comment..."
             value={commentText}
             onChange={handleChange}
           ></textarea>
-          <button>submit</button>
+          <button className="px-4 py-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out">
+            submit
+          </button>
         </div>
       </form>
     </div>

@@ -11,7 +11,7 @@ const Nav = () => {
   // need to change a tags to use link tags and set up routes using react router dom
 
   return (
-    <header className="w-full h-[80px] flex justify-between items-center px-4 bg-[#FF0022] text-white">
+    <header className="w-full h-[80px] flex justify-between items-center px-4 bg-[#FF0022] text-white shadow-xl">
       <Link to="/">
         <h1 className="text-2xl">Cancer Blog</h1>
       </Link>

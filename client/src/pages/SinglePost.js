@@ -36,17 +36,18 @@ const SinglePost = () => {
         </div>
       </div>
       <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
-        <div className="">
-          <CommentList comments={post.comments} />
-        </div>
-
-        <div className="">
+      <div className="">
           {Auth.loggedIn() ? (
             <CommentForm postId={post._id} />
           ) : (
             <p>Sign in to leave a comment</p>
           )}
         </div>
+        <div className="">
+          <CommentList comments={post.comments} />
+        </div>
+
+        
       </div>
     </main>
   );
