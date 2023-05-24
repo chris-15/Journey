@@ -45,7 +45,7 @@ const CommentForm = ({ postId }) => {
             value={commentText}
             onChange={handleChange}
           ></textarea>
-          <button className="px-4 py-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out">
+          <button className="px-4 py-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out" type="submit">
             submit
           </button>
         </div>

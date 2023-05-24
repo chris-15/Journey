@@ -87,7 +87,7 @@ const Signup = () => {
           </div>
 
           <div>
-            <button className="border w-full my-5 py-2 bg-[#FF0022] text-white hover:underline" type="submit">CREATE ACCOUNT</button>
+            <button className="rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out" type="submit">CREATE ACCOUNT</button>
           </div>
 
           <div className="flex justify-around">
