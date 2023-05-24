@@ -7,7 +7,7 @@ const Home = () => {
 
     const { loading, data } = useQuery(QUERY_POSTS);
 
-    const posts = data?.posts || [];
+    const posts = data?.posts || {};
 
     console.log(posts)
     

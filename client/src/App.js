@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login"
 import Signup from "./pages/Signup";
 import SinglePost from "./pages/SinglePost";
+import Profile from "./pages/Profile";
 
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
@@ -50,6 +51,8 @@ function App() {
               <Route path="/login" element={<Login />}/>
               <Route path="/signup" element={<Signup/>}/>
               <Route path="/post/:id" element={<SinglePost/>}/>
+              <Route path="/profile/:username" element={<Profile/>} />
+            
             </Routes>
           </div>
         </div>
