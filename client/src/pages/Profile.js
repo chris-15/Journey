@@ -14,15 +14,15 @@ const Profile = () => {
   }
   );
 
-  console.log(userParam)
+  console.log("HELLO " + userParam)
 
   const user = data?.me  || data?.user || {};
 
   console.log(user)
 
- /*  if( Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+  if( Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
    return <Navigate to="/profile" />
-  }  */
+  }  
   
 
   if (!user?.username) {
@@ -49,7 +49,7 @@ const Profile = () => {
       <div className="flex-row justify-space-between mb-3">
         <div className="col-12 mb-3 col-lg-8">
           <PostList posts={user.posts} title={
-             `${user.username}'s Posts`} />
+            userParam ? `${user.username}'s Posts` : "Your Posts"} />
         </div>
       </div>
     </div>

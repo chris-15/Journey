@@ -19,7 +19,7 @@ const Nav = () => {
       <nav>
         {Auth.loggedIn() ? (
           <>
-            <Link to={"/profile/" + Auth.getProfile().data.username }className="px-2">
+            <Link to={"/profile"}className="px-2">
               My Profile
             </Link>
             <a href="/" onClick={logout}>
