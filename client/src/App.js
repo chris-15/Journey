@@ -7,6 +7,7 @@ import Login from "./pages/Login"
 import Signup from "./pages/Signup";
 import SinglePost from "./pages/SinglePost";
 import Profile from "./pages/Profile";
+import Footer from "./components/Footer";
 
 //apolloProvider provides data to the components
 //ApolloClient initializes the connection to graphql
@@ -43,7 +44,7 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div className="flex-col justify-start min-h-screen">
+        <div className="flex flex-col justify-start min-h-screen">
           <Nav />
           <div className="">
             <Routes>
@@ -55,9 +56,10 @@ function App() {
                 <Route path=":username" element={<Profile />} />
                 <Route path="" element={<Profile />} />
               </Route>
-            
             </Routes>
           </div>
+          <Footer className="" />
+         
         </div>
       </Router>
     </ApolloProvider>

@@ -46,7 +46,7 @@ const SinglePost = () => {
           {Auth.loggedIn() ? (
             <CommentForm postId={post._id} />
           ) : (
-            <p>Sign in to leave a comment</p>
+            <p><span className="text-[#FF0022] hover:underline"><Link to="/login">Log in</Link></span> to leave a comment</p>
           )}
         </div>
         <div className="">

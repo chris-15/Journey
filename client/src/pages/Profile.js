@@ -60,8 +60,9 @@ const Profile = () => {
         </h2>
       </div> */}
 
+      {/* condititonaly render add post form if user logged in or not */}
       <div>
-        <PostForm />
+        {!userParam && <PostForm />}
       </div>
 
       <div className="flex-row justify-space-between mb-3">

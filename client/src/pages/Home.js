@@ -13,7 +13,7 @@ const Home = () => {
     console.log(posts)
     
     return (
-        <main className='grid grid-cols-1 h-screen w-full'>
+        <main className='grid grid-cols-1 w-full'>
             <div className='text-center mt-5'>
                 <h2 className='text-2xl'>Want to add a post!? <span className='font-bold text-[#FF0022] hover:underline '><Link to={"/profile"}>Click Here!</Link></span></h2>
                 

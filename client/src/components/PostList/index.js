@@ -19,10 +19,10 @@ const PostList = ({ posts, title }) => {
               >
                 
                   <div className="p-6">
-                    <h3 className="text-lg font-semibold mb-4"><Link to={`/post/${post._id}`}>{post.postTitle}</Link></h3>
+                    <h3 className="text-lg font-semibold mb-4 hover:text-[#FF0022]"><Link to={`/post/${post._id}`}>{post.postTitle}</Link></h3>
                     <div className="flex items-center text-sm text-gray-600">
                       <p className="mr-2">
-                        <span className="font-semibold"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> posted on{' '}
+                        <span className="text-black font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> posted on{' '}
                         {post.createdAt}
                       </p>
                       <p className="border-l-2 pl-2 ml-2 text-gray-500">
