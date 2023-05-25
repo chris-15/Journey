@@ -46,6 +46,11 @@ const PostForm = () => {
       await addPost({
         variables: { postText, postTitle }
       })
+
+      // clear the values in the form
+      setPostText('');
+      setPostTitle('');
+      setCharacterCount(0)
     } catch(e) {
       console.error(e)
     }
@@ -74,6 +79,7 @@ const PostForm = () => {
           ></textarea>
         </div>
         <p className="mb-4">Character Limit: {characterCount}/5000</p>
+        {error && <span>Something went wrong!</span>}
         <button
           className="w-full py-2 px-4 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
           type="submit"
