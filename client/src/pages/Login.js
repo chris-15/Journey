@@ -78,7 +78,7 @@ const Login = () => {
           </div>
 
           <div className="flex justify-around">
-            <p>Don't have an account? <Link to="/signup" className="font-bold hover:text-[#FF0022] hover:underline">Sign up now!</Link></p>
+            <p>Don't have an account? <Link to="/signup" className="font-bold text-[#FF0022] underline">Sign up now!</Link></p>
             
           </div>
         </form>

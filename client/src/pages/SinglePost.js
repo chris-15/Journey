@@ -29,7 +29,7 @@ const SinglePost = () => {
           <h4> ← Return Home</h4>
         </Link>
       </div>
-      <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
+      <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
         <h2 className="text-2xl font-semibold text-center mb-4">{post.postTitle}</h2>
 
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
@@ -37,7 +37,7 @@ const SinglePost = () => {
             <p className="mb-2">
               {post.username} on {post.createdAt}
             </p>
-            <p className="">{post.postText}</p>
+            <p className=" ">{post.postText}</p>
           </div>
         </div>
       </div>

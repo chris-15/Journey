@@ -54,7 +54,7 @@ const PostForm = () => {
 
   return (
     <div className="mx-4">
-      <form className="max-w-md mx-auto bg-white shadow-md rounded-lg px-8 py-6 xl:max-w-2xl" onSubmit={handleFormSubmit}>
+      <form className="max-w-md mx-auto bg-white shadow-md rounded-lg px-8 py-6 lg:max-w-2xl" onSubmit={handleFormSubmit}>
         {/* <h3 className="text-lg font-semibold mb-4">Title</h3> */}
         <h2 className="text-3xl font-bold text-center mb-4">Create A Post!</h2>
         <div className="mb-4">
