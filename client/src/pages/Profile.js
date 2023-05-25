@@ -19,7 +19,7 @@ const Profile = () => {
 
   const user = data?.me  || data?.user || {};
 
-  console.log(user)
+  console.log(user.posts)
 
   if( Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
    return <Navigate to="/profile" />
