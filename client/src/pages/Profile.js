@@ -1,6 +1,7 @@
 import React from "react";
 
 import PostList from "../components/PostList";
+import PostForm from "../components/PostForm";
 
 import { useQuery,  } from "@apollo/client";
 import { QUERY_USER, QUERY_ME } from "../utils/queries";
@@ -44,6 +45,10 @@ const Profile = () => {
         <h2 className="bg-dark text-secondary p-3 display-inline-block">
           { userParam ?  `${user.username}'s` : 'Your'} Profile
         </h2>
+      </div>
+
+      <div>
+        <PostForm />
       </div>
 
       <div className="flex-row justify-space-between mb-3">
