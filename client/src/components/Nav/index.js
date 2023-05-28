@@ -19,10 +19,10 @@ const Nav = () => {
       <nav>
         {Auth.loggedIn() ? (
           <>
-            <Link to={"/profile"} className="mr-4 text-2xl hover:underline">
+            <Link to={"/profile"} className="mr-4 text-xl lg:text-2xl hover:underline">
               My Profile
             </Link>
-            <a className="text-2xl hover:underline" href="/" onClick={logout}>
+            <a className="text-xl lg:text-2xl hover:underline" href="/" onClick={logout}>
               Logout
             </a>
           </>
