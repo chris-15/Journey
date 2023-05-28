@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 import PostList from "../components/PostList";
@@ -21,21 +21,24 @@ const Profile = () => {
 
   console.log(user.posts);
 
+  // set state of the post form
+  const [showPostForm, setShowPostForm] = useState(false);
+
+  // function to handle toggling the show post form button
+  const handleTogglePostForm = () => setShowPostForm(!showPostForm);
+
   if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
     return <Navigate to="/profile" />;
   }
 
   if (!user?.username) {
     return (
-        <main className="flex flex-col items-center justify-center h-screen">
+      <main className="flex flex-col items-center justify-center h-screen">
         <h4 className="text-2xl text-center">
           You need to be logged in to use this page.
         </h4>
         <h4 className="mt-4 text-xl font-extrabold">
-          <Link
-            to="/login"
-            className="text-[#FF0022] hover:underline"
-          >
+          <Link to="/login" className="text-[#FF0022] hover:underline">
             Log In Here!
           </Link>
         </h4>
@@ -60,9 +63,24 @@ const Profile = () => {
         </h2>
       </div> */}
 
+
       {/* condititonaly render add post form if user logged in or not */}
+      {/* and conditionally render post form with a button so if user doesnt want to add a post they can hide the form so it doesnt take up space on the screen */}
       <div>
-        {!userParam && <PostForm />}
+        {!userParam && (
+          <div className="">
+            <div className="max-w-xs mx-auto">
+              <button
+                className=" w-full max-w-xl py-2 px-4 mb-4 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
+                type="button"
+                onClick={handleTogglePostForm}
+              >
+                {showPostForm ? "Hide" : "Add Post!"}
+              </button>
+            </div>
+            <div>{showPostForm && <PostForm />}</div>
+          </div>
+        )}
       </div>
 
       <div className="flex-row justify-space-between mb-3">
