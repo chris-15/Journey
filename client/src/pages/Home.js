@@ -3,10 +3,19 @@ import { Link } from 'react-router-dom';
 
 import { useQuery } from '@apollo/client';  
 import { QUERY_POSTS } from '../utils/queries';
+import { useState } from 'react';
 
 const Home = () => {
 
     const { loading, data } = useQuery(QUERY_POSTS);
+
+    //set the number of initial visible posts on homepage 
+    const [visiblePosts, setVisiblePosts] = useState(10);
+
+    //function to handle show more posts button by adding 10 posts to the state of visible posts
+    const handleLoadMorePosts =() => {
+        setVisiblePosts(visiblePosts +10 );
+    };
 
     const posts = data?.posts || {};
 
@@ -22,7 +31,17 @@ const Home = () => {
                 {loading ? (
                     <div>Loading!</div>
                 ): (
-                    <PostList posts={posts} title="Check out some blog posts!"/>
+                    <>
+                    <PostList posts={posts.slice(0, visiblePosts)} title="Check out some blog posts!"/>
+                    {visiblePosts < posts.length && (
+                        <div className='flex justify-center'>
+                            <button className=' py-2 px-4 mb-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out' onClick={handleLoadMorePosts}>Load More Posts!
+                        </button>
+                        </div>
+                        
+                    )}
+                
+                    </>
                 )}
             </div>
         </main>
