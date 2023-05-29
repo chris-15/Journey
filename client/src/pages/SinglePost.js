@@ -18,6 +18,8 @@ const SinglePost = () => {
 
   const post = data?.post || {};
 
+  //console.log(post.comments);
+
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -30,12 +32,17 @@ const SinglePost = () => {
         </Link>
       </div>
       <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
-        <h2 className="text-4xl font-semibold text-center mb-4">{post.postTitle}</h2>
+        <h2 className="text-4xl font-semibold text-center mb-4">
+          {post.postTitle}
+        </h2>
 
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="p-6">
             <p className="mb-2">
-              <span className="text-black font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> on {post.createdAt}
+              <span className="text-black font-extrabold hover:text-[#FF0022]">
+                <Link to={`/profile/${post.username}`}>{post.username}</Link>
+              </span>{" "}
+              on {post.createdAt}
             </p>
             <p className="text-lg">{post.postText}</p>
           </div>
@@ -47,8 +54,13 @@ const SinglePost = () => {
             <CommentForm postId={post._id} />
           ) : (
             <div className="flex justify-center">
-              <p className="text-lg"><span className="text-[#FF0022] hover:underline"><Link to="/login">Log in</Link></span> to leave a comment</p>
-              </div>
+              <p className="text-lg">
+                <span className="text-[#FF0022] hover:underline">
+                  <Link to="/login">Log in</Link>
+                </span>{" "}
+                to leave a comment
+              </p>
+            </div>
           )}
         </div>
         <div className="">

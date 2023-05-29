@@ -37,16 +37,20 @@ const CommentForm = ({ postId }) => {
         Character Count: {characterCount}/500
         {error && <span>Something went wrong!</span>}
       </p>
+
       <form onSubmit={handleFormSubmit}>
         <div className="flex items-center mb-4">
           <textarea
-            className="flex-grow border-2 p-2 mr-2 resize-none h-32"
+            className="flex-grow border-2 p-2 mr-2 resize-none h-32 focus:outline-none focus:ring-2 focus:ring-[#FF0022]"
             placeholder="Add a comment..."
             value={commentText}
             onChange={handleChange}
           ></textarea>
-          <button className="px-4 py-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out" type="submit">
-            submit
+          <button
+            className="px-4 py-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
+            type="submit"
+          >
+            Submit
           </button>
         </div>
       </form>
