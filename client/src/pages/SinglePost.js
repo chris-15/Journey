@@ -24,20 +24,20 @@ const SinglePost = () => {
 
   return (
     <main className="grid grid-cols-1 w-full">
-      <div className="m-4 font-bold hover:text-[#FF0022] text-lg">
+      <div className="m-4 font-bold hover:text-[#FF0022] hover:underline text-lg">
         <Link to="/">
           <h4> ← Return Home</h4>
         </Link>
       </div>
       <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
-        <h2 className="text-2xl font-semibold text-center mb-4">{post.postTitle}</h2>
+        <h2 className="text-4xl font-semibold text-center mb-4">{post.postTitle}</h2>
 
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="p-6">
             <p className="mb-2">
               <span className="text-black font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> on {post.createdAt}
             </p>
-            <p className=" ">{post.postText}</p>
+            <p className="text-lg">{post.postText}</p>
           </div>
         </div>
       </div>
