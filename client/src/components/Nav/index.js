@@ -13,7 +13,7 @@ const Nav = () => {
   return (
     <header className="w-full h-[80px] flex justify-between items-center px-4 bg-[#FF0022] text-white shadow-xl">
       <Link to="/">
-        <h1 className="text-2xl">Cancer Blog</h1>
+        <h1 className="text-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105">Cancer Blog</h1>
       </Link>
 
       <nav>
