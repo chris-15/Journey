@@ -71,6 +71,8 @@ const Login = () => {
             />
           </div>
 
+          {error && <div className="text-center text-xl text-[#FF0022] font-extrabold">Incorrect credentials</div>}
+
           <div>
             <button className=" rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out" type="submit">
               Log In
@@ -83,7 +85,7 @@ const Login = () => {
           </div>
         </form>
 
-        {error && <div>Incorrect credentials</div>}
+        
       </div>
     </main>
   );
