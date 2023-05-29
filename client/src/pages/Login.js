@@ -3,8 +3,7 @@ import { LOGIN_USER } from "../utils/mutations";
 import { useMutation } from "@apollo/client";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
-
-
+import { motion } from "framer-motion";
 
 const Login = () => {
   const [login, { error }] = useMutation(LOGIN_USER);
@@ -19,7 +18,6 @@ const Login = () => {
       [name]: value,
     });
   };
-
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -44,7 +42,10 @@ const Login = () => {
   return (
     <main className="grid grid-cols-1 h-screen w-full">
       <div className="flex flex-col justify-center">
-        <form className="max-w-[300px] sm:max-w-[400px] w-full mx-auto" onSubmit={handleFormSubmit}>
+        <form
+          className="max-w-[300px] sm:max-w-[400px] w-full mx-auto"
+          onSubmit={handleFormSubmit}
+        >
           <h2 className="text-4xl font-bold text-center py-6">Cancer Blog</h2>
 
           <div className="flex flex-col py-2">
@@ -73,21 +74,38 @@ const Login = () => {
             />
           </div>
 
-          {error && <div className="text-center text-xl text-[#FF0022] font-extrabold">Incorrect credentials</div>}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="text-center text-xl text-[#FF0022] font-extrabold"
+            >
+              Incorrect credentials
+            </motion.div>
+          )}
 
           <div>
-            <button className=" rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out" type="submit">
+            <button
+              className=" rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out"
+              type="submit"
+            >
               Log In
             </button>
           </div>
 
           <div className="flex justify-around">
-            <p>Don't have an account? <Link to="/signup" className="font-bold text-[#FF0022] hover:underline">Sign up!</Link></p>
-            
+            <p>
+              Don't have an account?{" "}
+              <Link
+                to="/signup"
+                className="font-bold text-[#FF0022] hover:underline"
+              >
+                Sign up!
+              </Link>
+            </p>
           </div>
         </form>
-
-        
       </div>
     </main>
   );

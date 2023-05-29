@@ -3,6 +3,7 @@ import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -86,17 +87,38 @@ const Signup = () => {
             />
           </div>
 
-          {error && <div className="text-center text-xl text-[#FF0022] font-extrabold">Something went wrong. Please try again!</div>}
+          {error && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              className="text-center text-xl text-[#FF0022] font-extrabold"
+            >
+              Something went wrong. Please try again!
+            </motion.div>
+          )}
 
           <div>
-            <button className="rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out" type="submit">CREATE ACCOUNT</button>
+            <button
+              className="rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out"
+              type="submit"
+            >
+              CREATE ACCOUNT
+            </button>
           </div>
 
           <div className="flex justify-around">
-            <p>Already have an account? <Link to="/login" className="font-bold hover:text-[#FF0022] hover:underline">LOG IN</Link></p>
+            <p>
+              Already have an account?{" "}
+              <Link
+                to="/login"
+                className="font-bold text-[#FF0022] hover:underline"
+              >
+                LOG IN
+              </Link>
+            </p>
           </div>
         </form>
-        
       </div>
     </main>
   );
