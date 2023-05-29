@@ -19,6 +19,8 @@ const CommentForm = ({ postId }) => {
 
   // function to handle form submit
   const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    
     try {
       await addComment({
         variables: { commentText, postId },
