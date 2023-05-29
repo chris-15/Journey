@@ -32,6 +32,7 @@ const Home = () => {
                     <div>Loading!</div>
                 ): (
                     <>
+                    {/* slicing thru post array to only show 10 posts at time */}
                     <PostList posts={posts.slice(0, visiblePosts)} title="Check out some blog posts!"/>
                     {visiblePosts < posts.length && (
                         <div className='flex justify-center'>

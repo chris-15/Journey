@@ -35,7 +35,7 @@ const SinglePost = () => {
         <div className="bg-white shadow-xl rounded-lg overflow-hidden">
           <div className="p-6">
             <p className="mb-2">
-              {post.username} on {post.createdAt}
+              <span className="text-black font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> on {post.createdAt}
             </p>
             <p className=" ">{post.postText}</p>
           </div>
@@ -46,7 +46,9 @@ const SinglePost = () => {
           {Auth.loggedIn() ? (
             <CommentForm postId={post._id} />
           ) : (
-            <p><span className="text-[#FF0022] hover:underline"><Link to="/login">Log in</Link></span> to leave a comment</p>
+            <div className="flex justify-center">
+              <p className="text-lg"><span className="text-[#FF0022] hover:underline"><Link to="/login">Log in</Link></span> to leave a comment</p>
+              </div>
           )}
         </div>
         <div className="">
