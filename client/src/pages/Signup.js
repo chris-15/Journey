@@ -86,6 +86,8 @@ const Signup = () => {
             />
           </div>
 
+          {error && <div className="text-center text-xl text-[#FF0022] font-extrabold">Something went wrong. Please try again!</div>}
+
           <div>
             <button className="rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out" type="submit">CREATE ACCOUNT</button>
           </div>
@@ -94,7 +96,7 @@ const Signup = () => {
             <p>Already have an account? <Link to="/login" className="font-bold hover:text-[#FF0022] hover:underline">LOG IN</Link></p>
           </div>
         </form>
-        {error && <div>Something went wrong. Please try again!</div>}
+        
       </div>
     </main>
   );

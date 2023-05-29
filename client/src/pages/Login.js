@@ -48,26 +48,28 @@ const Login = () => {
           <h2 className="text-4xl font-bold text-center py-6">Cancer Blog</h2>
 
           <div className="flex flex-col py-2">
-            <label className="" htmlFor="email">Email</label>
+            {/* <label className="" htmlFor="email">Email</label> */}
             <input
-              className="border-2 p-2"
+              className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#FF0022]"
               id="email"
               type="email"
               name="email"
               value={formState.email}
               onChange={handleChange}
+              placeholder="Email"
             />
           </div>
 
           <div className="flex flex-col py-2">
-            <label className="" htmlFor="password">Password</label>
+            {/* <label className="" htmlFor="password">Password</label> */}
             <input
-              className="border-2 p-2"
+              className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#FF0022]"
               id="password"
               type="password"
               name="password"
               value={formState.password}
               onChange={handleChange}
+              placeholder="Password"
             />
           </div>
 
@@ -80,7 +82,7 @@ const Login = () => {
           </div>
 
           <div className="flex justify-around">
-            <p>Don't have an account? <Link to="/signup" className="font-bold text-[#FF0022] underline">Sign up now!</Link></p>
+            <p>Don't have an account? <Link to="/signup" className="font-bold text-[#FF0022] hover:underline">Sign up!</Link></p>
             
           </div>
         </form>
