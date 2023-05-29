@@ -15,11 +15,11 @@ const PostList = ({ posts, title }) => {
             posts.map((post) => (
               <div
                 key={post._id}
-                className="bg-white shadow-lg rounded-lg overflow-hidden"
+                className="bg-white shadow-lg rounded-lg overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
               >
                 
                   <div className="p-6">
-                    <h3 className="text-lg font-semibold mb-4 hover:text-[#FF0022]"><Link to={`/post/${post._id}`}>{post.postTitle}</Link></h3>
+                    <h3 className="text-xl font-semibold mb-4 hover:text-[#FF0022] hover:underline"><Link to={`/post/${post._id}`}>{post.postTitle}</Link></h3>
                     <div className="flex items-center text-sm text-gray-600">
                       <p className="mr-2">
                         <span className="text-black font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${post.username}`}>{post.username}</Link></span> posted on{' '}
