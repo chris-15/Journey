@@ -26,11 +26,12 @@ export const ADD_USER = gql`
 
 export const ADD_POST = gql`
   mutation addPost($postText: String!, $postTitle: String!) {
-    addPost(postText: $postText, postTitle: $postTitle) {
+    addPost(postText: $postText, postTitle: $postTitle, category: $category) {
       _id
       postText
       postTitle
       createdAt
+      category
       username
       commentCount
       comments {
@@ -50,6 +51,23 @@ export const ADD_COMMENT = gql`
         commentText
         createdAt
         username
+      }
+    }
+  }
+`;
+
+export const DELETE_POST = gql`
+  mutation deletePost($postId: ID!) {
+    deletedPost(postId: $postId) {
+      _id
+      postText
+      postTitle
+      createdAt
+      category
+      username
+      commentCount
+      comments {
+        _id
       }
     }
   }
