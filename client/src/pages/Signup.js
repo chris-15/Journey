@@ -125,7 +125,7 @@ const Signup = () => {
 
             <div>
               <button
-                className="rounded-md w-full my-5 py-2 bg-[#FF0022] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out"
+                className="rounded-md w-full my-5 py-2 bg-gradient-to-r from-[#0081a7] to-[#40c3c2] text-white hover:underline font-semibold hover:bg-red-700 transition duration-300 ease-in-out"
                 type="submit"
               >
                 CREATE ACCOUNT

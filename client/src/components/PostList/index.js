@@ -19,7 +19,7 @@ const PostList = ({ posts, title }) => {
           posts.map((post) => (
             <div
               key={post._id}
-              className="bg-white shadow-lg rounded-lg overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+              className="bg-white border-solid border-2 rounded-lg overflow-hidden transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105"
             >
               
                 <div className="p-6">

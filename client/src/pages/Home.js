@@ -51,7 +51,7 @@ const Home = () => {
         <div className="text-center mt-5">
           <h2 className="text-2xl">
             Want to add a post!?{" "}
-            <span className="font-bold text-[#FF0022] hover:underline ">
+            <span className="font-bold text-[#40c3c2]  hover:underline ">
               <Link to={"/profile"}>Click Here!</Link>
             </span>
           </h2>
@@ -69,7 +69,7 @@ const Home = () => {
               {visiblePosts < posts.length && (
                 <div className="flex justify-center">
                   <button
-                    className=" py-2 px-4 mb-2 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
+                    className="px-4 py-2 text-white font-semibold rounded-md bg-[#0081a7] hover:underline hover:bg-gradient-to-r from-[#0081a7] to-[#40c3c2]"
                     onClick={handleLoadMorePosts}
                   >
                     Load More Posts!

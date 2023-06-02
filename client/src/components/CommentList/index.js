@@ -11,7 +11,7 @@ const CommentList = ({ comments }) => {
       <div className="mb-4">
         <h4 className="text-2xl font-semibold">Comments</h4>
       </div>
-      <div className="">
+      <div className="bg-white rounded-lg p-4">
         {reversedCommentsArr &&
           reversedCommentsArr.map((comment) => (
             <div

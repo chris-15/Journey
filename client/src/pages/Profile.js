@@ -105,7 +105,7 @@ const Profile = () => {
             <div className="">
               <div className="max-w-xs mx-auto">
                 <button
-                  className=" w-full max-w-xl py-2 px-4 mb-4 bg-[#FF0022] text-white font-semibold rounded-md hover:bg-red-700 transition duration-300 ease-in-out"
+                  className=" w-full max-w-xl py-2 px-4 mb-4 font-semibold rounded-md text-white bg-[#0081a7] hover:underline hover:bg-gradient-to-r from-[#0081a7] to-[#40c3c2]"
                   type="button"
                   onClick={handleTogglePostForm}
                 >
