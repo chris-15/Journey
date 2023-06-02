@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 const PostList = ({ posts, title }) => {
   if (!posts || !posts.length) {
     return (
-      <div className="">
-        <h3 className="text-center text-3xl font-bold mt-12">No Posts Yet</h3>
+      <div className="h-screen flex justify-center items-center">
+        <h3 className="text-5xl font-bold mt-12">No Posts Yet</h3>
       </div>
     );
   }
 
   return (
-    <div className=" py-12">
+    <div className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-8">{title}</h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">

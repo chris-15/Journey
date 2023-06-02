@@ -48,13 +48,15 @@ const Home = () => {
       variants={pageVariants}
     >
       <main className="grid grid-cols-1 w-full">
-        <div className="text-center mt-5">
-          <h2 className="text-2xl">
+        <div className="mt-5">
+          <h2 className="text-center text-2xl">
             Want to add a post!?{" "}
             <span className="font-bold text-[#0081a7] underline">
               <Link to={"/profile"}>Click Here!</Link>
             </span>
           </h2>
+          
+          
         </div>
         <div className="">
           {loading ? (
@@ -79,6 +81,7 @@ const Home = () => {
             </>
           )}
         </div>
+        
       </main>
     </motion.div>
   );

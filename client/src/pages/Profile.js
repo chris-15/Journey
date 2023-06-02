@@ -86,7 +86,7 @@ const Profile = () => {
       exit="exit"
       variants={pageVariants}
     >
-      <main>
+      <main className="">
         <div className="mx-4 mt-4 mb-6 font-bold hover:text-[#40c3c2] hover:underline text-lg">
           <Link to="/">
             <h4> ← Return Home</h4>

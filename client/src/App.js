@@ -46,7 +46,7 @@ function App() {
       <Router>
         <div className="flex flex-col justify-start min-h-screen">
           <Nav />
-          <div className="">
+          <div>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />}/>
@@ -58,7 +58,7 @@ function App() {
               </Route>
             </Routes>
           </div>
-          <Footer className="" />
+          {/* <Footer  /> */}
          
         </div>
       </Router>
