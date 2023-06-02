@@ -75,7 +75,7 @@ const PostForm = () => {
         <div className="mb-4">
           <textarea
             className="w-full border-2 border-gray-300 p-2 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
-            placeholder="Add a Cancer Type"
+            placeholder="Add a Cancer Type: Limit 15 Characters"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
           ></textarea>

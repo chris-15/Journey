@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { FaComment } from "react-icons/fa"
 
 const PostList = ({ posts, title }) => {
   if (!posts || !posts.length) {
@@ -36,12 +37,12 @@ const PostList = ({ posts, title }) => {
                     </p>
                   </div>
                   {/* 0081a7 */}
-                  <div className="flex justify-around items-center border-t-2 mt-2 pt-2 pb-2">
+                  <div className="flex justify-between items-center border-t-2 mt-2 pt-2 pb-2">
                     <h3 className="rounded-xl py-1 px-2.5 bg-gradient-to-r from-[#40c3c2] to-[#0081a7] text-md text-white">
                       #{post.category}
                     </h3>
-                    <p className="text-sm text-gray-500">
-                      Total Comments: {post.commentCount}
+                    <p className="text-md text-gray-500 flex items-center">
+                      <span className="mr-2"><FaComment size={20}></FaComment></span>{post.commentCount}
                     </p>
                   </div>
                 </div>
