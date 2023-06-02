@@ -73,6 +73,21 @@ const resolvers = {
       }
       throw new AuthenticationError("You need to be logged in!");
     },
+    deletePost: async (parent, { postId }, context) => {
+      if(context.user) {
+        const deletedPost = await Post.findOneAndDelete({
+          _id: postId,
+          username: context.user.username
+        });
+
+        await User.findByIdAndUpdate(
+          { _id: context.user._id},
+          { $pull: { posts: postId } },
+          { new: true }
+        )
+        return deletedPost
+      }
+    },
     addComment: async (parent, { postId, commentText }, context) => {
       if (context.user) {
         const updatedPost = await Post.findOneAndUpdate(
