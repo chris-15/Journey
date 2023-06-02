@@ -28,6 +28,34 @@ db.once("open", async () => {
     "Sarcoma",
   ];
 
+  const userTitles = [
+    "Diagnosis Day",
+    "Treatment Options",
+    "Support Network",
+    "Coping Strategies",
+    "Celebrating Wins",
+    "Self-Care",
+    "Living with Uncertainty",
+    "Finding Joy",
+    "Overcoming Fear",
+    "The Power of Hope",
+    "Complementary Therapies",
+    "Treatment Decisions",
+    "Building Resilience",
+    "Managing Relationships",
+    "Inspiration",
+    "Healthy Lifestyle",
+    "Mindfulness",
+    "Positive Mindset",
+    "Emotional Well-being",
+    "Life After Cancer",
+    "Empowerment",
+    "Strength and Courage",
+    "Survivor Stories",
+    "Advocacy",
+    "Gratitude",
+  ];
+
   for (let i = 0; i < 6; i++) {
     const userData = {
       username: faker.internet.userName(),
@@ -42,9 +70,9 @@ db.once("open", async () => {
 
   console.log("Users seeded");
 
-  for (let i = 0; i < 26; i++) {
+  for (let i = 0; i < 25; i++) {
     const postData = {
-      postTitle: faker.lorem.words(),
+      postTitle: userTitles[Math.floor(Math.random() * userTitles.length)],
       postText: faker.lorem.paragraphs(),
       category: category[Math.floor(Math.random() * category.length)],
       username: users[Math.floor(Math.random() * users.length)].username,
