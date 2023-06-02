@@ -8,6 +8,7 @@ const PostForm = () => {
   const [characterCount, setCharacterCount] = useState(0);
   const [postText, setPostText] = useState("");
   const [postTitle, setPostTitle] = useState("");
+  const [category, setCategory] = useState("");
 
   const [addPost, { error }] = useMutation(ADD_POST, {
     update(cache, { data: { addPost } }) {
@@ -42,12 +43,13 @@ const PostForm = () => {
 
     try {
       await addPost({
-        variables: { postText, postTitle },
+        variables: { postText, postTitle, category },
       });
 
       // clear the values in the form
       setPostText("");
       setPostTitle("");
+      setCategory("");
       setCharacterCount(0);
     } catch (e) {
       console.error(e);
@@ -68,6 +70,14 @@ const PostForm = () => {
             placeholder="Add a Title"
             value={postTitle}
             onChange={(e) => setPostTitle(e.target.value)}
+          ></textarea>
+        </div>
+        <div className="mb-4">
+          <textarea
+            className="w-full border-2 border-gray-300 p-2 rounded-lg resize-none focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
+            placeholder="Add a Cancer Type"
+            value={category}
+            onChange={(e) => setCategory(e.target.value)}
           ></textarea>
         </div>
         <div className="">
