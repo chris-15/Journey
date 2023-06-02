@@ -13,6 +13,7 @@ const typeDefs = gql`
         postText: String
         postTitle: String
         createdAt: String
+        category: String
         username: String
         commentCount: Int
         comments:[Comment]
