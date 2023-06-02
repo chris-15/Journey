@@ -21,6 +21,10 @@ const postSchema = new Schema(
             default: Date.now,
             get: timestamp => dateFormat(timestamp)            
         },
+        category: {
+            type: String,
+            required: true
+        },
         username: {
             type: String,
             required: true
