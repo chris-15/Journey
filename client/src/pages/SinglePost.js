@@ -89,7 +89,7 @@ const SinglePost = () => {
               </div>
             )}
           </div>
-          <div className="">
+          <div className=''>
             <CommentList comments={post.comments} />
           </div>
         </div>

@@ -51,7 +51,7 @@ const Home = () => {
         <div className="text-center mt-5">
           <h2 className="text-2xl">
             Want to add a post!?{" "}
-            <span className="font-bold text-[#0081a7] underline ">
+            <span className="font-bold text-[#0081a7] underline">
               <Link to={"/profile"}>Click Here!</Link>
             </span>
           </h2>

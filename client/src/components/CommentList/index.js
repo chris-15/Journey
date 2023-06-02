@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom' 
+import { Link } from "react-router-dom";
 
 const CommentList = ({ comments }) => {
   // reversing the comments array so the latest comments get displayed
@@ -11,7 +11,13 @@ const CommentList = ({ comments }) => {
       <div className="mb-4">
         <h4 className="text-2xl font-semibold">Comments</h4>
       </div>
-      <div className="bg-white rounded-lg p-4">
+      <div
+        className={
+          !reversedCommentsArr || reversedCommentsArr.length === 0
+            ? ""
+            : "bg-white rounded-lg p-4"
+        }
+      >
         {reversedCommentsArr &&
           reversedCommentsArr.map((comment) => (
             <div
@@ -21,7 +27,11 @@ const CommentList = ({ comments }) => {
               <p className="mb-1 text-lg">{comment.commentText}</p>
 
               <p className="text-sm">
-                <span className="font-extrabold hover:text-[#FF0022]"><Link to={`/profile/${comment.username}`}>{comment.username}</Link></span>{' '}
+                <span className="font-extrabold hover:text-[#FF0022]">
+                  <Link to={`/profile/${comment.username}`}>
+                    {comment.username}
+                  </Link>
+                </span>{" "}
                 <span className="text-gray-600">{comment.createdAt}</span>
               </p>
             </div>
