@@ -65,10 +65,10 @@ const SinglePost = () => {
           <div className="bg-white shadow-xl rounded-lg overflow-hidden">
             <div className="p-6">
               <p className="mb-4">
-                <span className="text-black font-extrabold hover:text-[#40c3c2]">
+                <span className=" text-black font-extrabold hover:text-[#40c3c2]">
                   <Link to={`/profile/${post.username}`}>{post.username}</Link>
                 </span>{" "}
-                on {post.createdAt}
+                <span className="text-sm text-gray-500"> on {post.createdAt}</span>
               </p>
               <p className="text-lg whitespace-pre-wrap">{post.postText}</p>
             </div>

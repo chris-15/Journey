@@ -14,7 +14,7 @@ const CommentForm = ({ postId }) => {
     if (event.target.value.length <= 500) {
       setCommentText(event.target.value);
       setCharacterCount(event.target.value.length);
-      console.log(commentText);
+      //console.log(commentText);
     }
   };
 

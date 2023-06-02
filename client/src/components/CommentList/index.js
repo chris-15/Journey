@@ -26,13 +26,13 @@ const CommentList = ({ comments }) => {
             >
               <p className="mb-1 text-lg">{comment.commentText}</p>
 
-              <p className="text-sm">
-                <span className="font-extrabold hover:text-[#FF0022]">
+              <p className="">
+                <span className=" font-extrabold hover:text-[#40c3c2]">
                   <Link to={`/profile/${comment.username}`}>
                     {comment.username}
                   </Link>
                 </span>{" "}
-                <span className="text-gray-600">{comment.createdAt}</span>
+                <span className="text-gray-500 text-sm">{comment.createdAt}</span>
               </p>
             </div>
           ))}
