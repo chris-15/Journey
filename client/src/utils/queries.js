@@ -7,6 +7,7 @@ export const QUERY_POSTS = gql`
       postText
       postTitle
       createdAt
+      category
       username
       commentCount
       comments {
@@ -26,6 +27,7 @@ export const QUERY_POST = gql`
       postText
       postTitle
       createdAt
+      category
       username
       commentCount
       comments {
@@ -49,6 +51,7 @@ export const QUERY_USER = gql`
         postText
         postTitle
         createdAt
+        category
         commentCount
       }
     }
@@ -66,6 +69,7 @@ export const QUERY_ME = gql`
         postText
         postTitle
         createdAt
+        category
         commentCount
         comments {
           _id
