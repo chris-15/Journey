@@ -14,7 +14,7 @@ const PostList = ({ posts, title }) => {
     <div className="py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-8">{title}</h2>
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2">
           {posts &&
             posts.map((post) => (
               <div
@@ -36,8 +36,8 @@ const PostList = ({ posts, title }) => {
                       posted on {post.createdAt}
                     </p>
                   </div>
-                  {/* 0081a7 */}
-                  <div className="flex justify-between items-center border-t-2 mt-2 pt-2 pb-2">
+            
+                  <div className="flex justify-between items-center border-t-2 my-2 pt-2">
                     <h3 className="rounded-xl py-1 px-2.5 bg-gradient-to-r from-[#40c3c2] to-[#0081a7] text-md text-white">
                       #{post.category}
                     </h3>

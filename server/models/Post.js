@@ -25,7 +25,7 @@ const postSchema = new Schema(
             type: String,
             required: true,
             minLength: 1,
-            maxLength: 15,
+            maxLength: 25,
         },
         username: {
             type: String,

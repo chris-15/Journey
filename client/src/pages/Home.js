@@ -10,7 +10,7 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
 
   //set the number of initial visible posts on homepage
-  const [visiblePosts, setVisiblePosts] = useState(9);
+  const [visiblePosts, setVisiblePosts] = useState(10);
 
   //function to handle show more posts button by adding 10 posts to the state of visible posts
   const handleLoadMorePosts = () => {
