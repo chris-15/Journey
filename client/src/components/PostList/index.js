@@ -28,10 +28,10 @@ const PostList = ({ posts, title }) => {
 
                   <div className="flex items-center text-sm text-gray-600">
                     <p className="mr-2">
-                      <span className="text-black font-extrabold">
-                        {/* <Link className="hover:text-[#40c3c2]"to={`/profile/${post.username}`}>
+                      <span className="text-black font-extrabold hover:text-[#40c3c2]">
+                        <Link to={`/profile/${post.username}`}>
                           {post.username}
-                        </Link> */}{post.username}
+                        </Link>
                       </span>{" "}
                       posted on {post.createdAt}
                     </p>
