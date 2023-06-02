@@ -69,15 +69,15 @@ const Login = () => {
       <main className="grid grid-cols-1 h-screen w-full">
         <div className="flex flex-col justify-center">
           <form
-            className="max-w-[300px] sm:max-w-[400px] w-full mx-auto"
+            className="max-w-[300px] sm:max-w-[400px] w-full mx-auto border-solid bg-white p-4 rounded-lg "
             onSubmit={handleFormSubmit}
           >
             <h2 className="text-4xl font-bold text-center py-6">Cancer Blog</h2>
 
             <div className="flex flex-col py-2">
-              {/* <label className="" htmlFor="email">Email</label> */}
+              <label className="mb-1" htmlFor="email">Email</label>
               <input
-                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#FF0022]"
+                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
                 id="email"
                 type="email"
                 name="email"
@@ -88,9 +88,9 @@ const Login = () => {
             </div>
 
             <div className="flex flex-col py-2">
-              {/* <label className="" htmlFor="password">Password</label> */}
+              <label className="mb-1" htmlFor="password">Password</label>
               <input
-                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#FF0022]"
+                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
                 id="password"
                 type="password"
                 name="password"
@@ -107,7 +107,7 @@ const Login = () => {
                 exit={{ opacity: 0, height: 0 }}
                 className="text-center text-xl text-[#FF0022] font-extrabold"
               >
-                Incorrect credentials
+                <p>Invalid credentials</p>
               </motion.div>
             )}
 
@@ -120,12 +120,12 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="flex justify-around">
+            <div className="flex justify-around border-t pt-2 text-gray-500">
               <p>
                 Don't have an account?{" "}
                 <Link
                   to="/signup"
-                  className="font-bold text-[#FF0022] hover:underline"
+                  className="font-bold text-[#0081a7] underline"
                 >
                   Sign up!
                 </Link>

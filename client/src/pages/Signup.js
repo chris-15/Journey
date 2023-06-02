@@ -67,7 +67,7 @@ const Signup = () => {
       <main className="grid grid-cols-1 h-screen w-full">
         <div className="flex flex-col justify-center">
           <form
-            className=" max-w-[300px] sm:max-w-[400px]  w-full mx-auto"
+            className=" max-w-[300px] sm:max-w-[400px]  w-full mx-auto border-solid bg-white p-4 rounded-lg"
             onSubmit={handleFormSubmit}
           >
             <h2 className="text-4xl font-bold text-center py-6">
@@ -75,12 +75,13 @@ const Signup = () => {
             </h2>
             {/* username */}
             <div className="flex flex-col py-2">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username" className="mb-1">Username</label>
               <input
-                className="border-2 p-2"
+                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
                 id="username"
                 type="username"
                 name="username"
+                placeholder="Username"
                 value={formState.username}
                 onChange={handleChange}
               />
@@ -88,12 +89,13 @@ const Signup = () => {
 
             {/* email */}
             <div className="flex flex-col py-2">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email" className="mb-1">Email</label>
               <input
-                className="border-2 p-2"
+                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
                 id="email"
                 type="email"
                 name="email"
+                placeholder="Email"
                 value={formState.email}
                 onChange={handleChange}
               />
@@ -101,12 +103,13 @@ const Signup = () => {
 
             {/* password */}
             <div className="flex flex-col py-2">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password" className="mb-1">Password</label>
               <input
-                className="border-2 p-2"
+                className="border-2 p-2 focus:outline-none focus:ring-2 focus:ring-[#40c3c2]"
                 id="password"
                 type="password"
                 name="password"
+                placeholder="Password"
                 value={formState.password}
                 onChange={handleChange}
               />
@@ -117,9 +120,9 @@ const Signup = () => {
                 initial={{ opacity: 0, height: 0 }}
                 animate={{ opacity: 1, height: "auto" }}
                 exit={{ opacity: 0, height: 0 }}
-                className="text-center text-xl text-[#FF0022] font-extrabold"
+                className="text-center text-xl text-[#FF0022] font-extrabold mt-2"
               >
-                Something went wrong. Please try again!
+                <p>Something went wrong. Please try again!</p>
               </motion.div>
             )}
 
@@ -132,12 +135,12 @@ const Signup = () => {
               </button>
             </div>
 
-            <div className="flex justify-around">
+            <div className="flex justify-around border-t pt-2 text-gray-500">
               <p>
                 Already have an account?{" "}
                 <Link
                   to="/login"
-                  className="font-bold text-[#FF0022] hover:underline"
+                  className="font-bold text-[#0081a7] underline"
                 >
                   LOG IN
                 </Link>

@@ -52,7 +52,7 @@ const SinglePost = () => {
       variants={pageVariants}
     >
       <main className="grid grid-cols-1 w-full">
-        <div className="m-4 font-bold hover:text-[#FF0022] hover:underline text-lg">
+        <div className="m-4 font-bold hover:text-[#40c3c2] hover:underline text-lg">
           <Link to="/">
             <h4> ← Return Home</h4>
           </Link>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { motion } from "framer-motion";
 
 import { useMutation } from "@apollo/client";
 import { ADD_COMMENT } from "../../utils/mutations";
@@ -36,10 +36,17 @@ const CommentForm = ({ postId }) => {
 
   return (
     <div className="max-w-[600px] w-full mx-auto">
-      <p className=" mb-2">
-        Character Count: {characterCount}/500
-        {error && <span> Something went wrong!</span>}
-      </p>
+      <p className=" mb-2">Character Count: {characterCount}/500</p>
+      {error && (
+        <motion.div
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          className="text-center text-xl text-[#FF0022] font-extrabold my-4"
+        >
+          <p>Something went wrong! Try again!</p>
+        </motion.div>
+      )}
 
       <form onSubmit={handleFormSubmit}>
         <div className="flex items-center mb-4">

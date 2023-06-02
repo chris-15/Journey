@@ -65,7 +65,7 @@ const Profile = () => {
             You need to be logged in to use this page.
           </h4>
           <h4 className="mt-4 text-xl font-extrabold">
-            <Link to="/login" className="text-[#FF0022] hover:underline">
+            <Link to="/login" className="text-[#0081a7] underline">
               Log In Here!
             </Link>
           </h4>
@@ -87,7 +87,7 @@ const Profile = () => {
       variants={pageVariants}
     >
       <main>
-        <div className="mx-4 mt-4 mb-6 font-bold hover:text-[#FF0022] text-lg">
+        <div className="mx-4 mt-4 mb-6 font-bold hover:text-[#40c3c2] hover:underline text-lg">
           <Link to="/">
             <h4> ← Return Home</h4>
           </Link>
