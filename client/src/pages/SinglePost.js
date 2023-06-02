@@ -65,7 +65,7 @@ const SinglePost = () => {
           <div className="bg-white shadow-xl rounded-lg overflow-hidden">
             <div className="p-6">
               <p className="mb-4">
-                <span className="text-black font-extrabold hover:text-[#FF0022]">
+                <span className="text-black font-extrabold hover:text-[#40c3c2]">
                   <Link to={`/profile/${post.username}`}>{post.username}</Link>
                 </span>{" "}
                 on {post.createdAt}
@@ -81,7 +81,7 @@ const SinglePost = () => {
             ) : (
               <div className="flex justify-center">
                 <p className="text-lg">
-                  <span className="text-[#FF0022] hover:underline">
+                  <span className="text-[#0081a7] underline">
                     <Link to="/login">Log in</Link>
                   </span>{" "}
                   to leave a comment
