@@ -10,11 +10,11 @@ const Home = () => {
   const { loading, data } = useQuery(QUERY_POSTS);
 
   //set the number of initial visible posts on homepage
-  const [visiblePosts, setVisiblePosts] = useState(10);
+  const [visiblePosts, setVisiblePosts] = useState(9);
 
   //function to handle show more posts button by adding 10 posts to the state of visible posts
   const handleLoadMorePosts = () => {
-    setVisiblePosts(visiblePosts + 10);
+    setVisiblePosts(visiblePosts + 3);
   };
 
   const posts = data?.posts || {};
@@ -48,6 +48,7 @@ const Home = () => {
       variants={pageVariants}
     >
       <main className="grid grid-cols-1 w-full">
+        {/* hero section- needs work */}
         <div className="mt-5">
           <h2 className="text-center text-2xl">
             Want to add a post!?{" "}
@@ -55,9 +56,8 @@ const Home = () => {
               <Link to={"/profile"}>Click Here!</Link>
             </span>
           </h2>
-          
-          
         </div>
+
         <div className="">
           {loading ? (
             <div>Loading!</div>
