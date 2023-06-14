@@ -11,7 +11,8 @@
 html,
 body {
   min-height: 100%;
-  background-color: #EDEDED;
+  /* background-color: #EDEDED; */
+  background-color: white;
   /* background-color: #011627; */
   
 }

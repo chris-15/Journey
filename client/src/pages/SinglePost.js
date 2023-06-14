@@ -57,23 +57,34 @@ const SinglePost = () => {
             <h4> ← Return Home</h4>
           </Link>
         </div>
-        <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
-          <h2 className="text-4xl font-semibold text-center mb-4">
-            {post.postTitle}
-          </h2>
 
-          <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+        <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
+          {/* title div */}
+          <div className="flex flex-col justify-center items-center">
+            {/* post category */}
+            <p className="rounded-lg py-1 px-2.5 bg-gradient-to-r from-[#40c3c2] to-[#0081a7] text-sm text-black mb-8 border border-black">
+              #{post.category}
+            </p>
+            <p className="text-sm text-gray-500 mb-2">
+              {post.createdAt}
+            </p>
+            <h2 className="text-5xl font-semibold text-center mb-4">{post.postTitle}</h2>
+            <p className=" text-black font-extrabold hover:text-[#40c3c2]">
+                <Link to={`/profile/${post.username}`}>{post.username}</Link>
+              
+            </p>
+          </div>
+
+          {/* post content */}
+          <div className=" overflow-hidden">
             <div className="p-6">
-              <p className="mb-4">
-                <span className=" text-black font-extrabold hover:text-[#40c3c2]">
-                  <Link to={`/profile/${post.username}`}>{post.username}</Link>
-                </span>{" "}
-                <span className="text-sm text-gray-500"> on {post.createdAt}</span>
-              </p>
               <p className="text-lg whitespace-pre-wrap">{post.postText}</p>
             </div>
           </div>
+
         </div>
+
+
         <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
           <div className="">
             {Auth.loggedIn() ? (
@@ -89,7 +100,7 @@ const SinglePost = () => {
               </div>
             )}
           </div>
-          <div className=''>
+          <div className="">
             <CommentList comments={post.comments} />
           </div>
         </div>
