@@ -11,9 +11,9 @@ const Nav = () => {
   
 
   return (
-    <header className="w-full h-[80px] flex justify-between items-center px-4 shadow-xl bg-gradient-to-r from-[#0081a7] to-[#40c3c2] text-white">
+    <header className="w-full h-[80px] flex justify-between items-center px-4 shadow-xl ">
       <Link to="/">
-        <h1 className="text-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">Brighter Days</h1>
+        <h1 className="text-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">Journey</h1>
       </Link>
 
       <nav>
