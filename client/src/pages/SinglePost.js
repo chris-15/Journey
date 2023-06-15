@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 import { useQuery, useMutation } from "@apollo/client";
-import { QUERY_POST } from "../utils/queries";
+import { QUERY_POST, QUERY_POSTS } from "../utils/queries";
 import { DELETE_POST } from "../utils/mutations";
 import Auth from "../utils/auth";
 
@@ -22,7 +22,20 @@ const SinglePost = () => {
 
  // console.log(postId);
 
-  const [deletePost, {error}] = useMutation(DELETE_POST);
+  const [deletePost, {error}] = useMutation(DELETE_POST, {
+    update(cache, { data: { deletePost } }) {
+
+      const { posts } = cache.readQuery({ query: QUERY_POSTS });
+
+      const updatedPosts = posts.filter((post) => post._id !== deletePost._id);
+      cache.writeQuery({
+        query: QUERY_POSTS,
+        data: { posts: updatedPosts },
+      });
+    },
+
+    
+  });
 
   const handleDeletePost = async () => {
     try {
