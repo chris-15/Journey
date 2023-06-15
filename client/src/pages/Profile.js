@@ -92,11 +92,6 @@ const Profile = () => {
             <h4> ← Return Home</h4>
           </Link>
         </div>
-        {/* <div className="flex-row mb-3">
-        <h2 className="bg-dark text-secondary p-3 display-inline-block">
-          { userParam ?  `${user.username}'s` : 'Your'} Profile
-        </h2>
-      </div> */}
 
         {/* condititonaly render add post form if user logged in or not */}
         {/* and conditionally render post form with a button so if user doesnt want to add a post they can hide the form so it doesnt take up space on the screen */}

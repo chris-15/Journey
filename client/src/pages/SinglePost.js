@@ -66,10 +66,10 @@ const SinglePost = () => {
               #{post.category}
             </p>
             <p className="text-sm text-gray-500 mb-2">
-              {post.createdAt}
+              {post.createdAt.split(" at")[0]}
             </p>
             <h2 className="text-5xl font-semibold text-center mb-4">{post.postTitle}</h2>
-            <p className=" text-black font-extrabold hover:text-[#40c3c2]">
+            <p className=" text-black font-extrabold capitalize hover:text-[#40c3c2]">
                 <Link to={`/profile/${post.username}`}>{post.username}</Link>
               
             </p>

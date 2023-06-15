@@ -11,9 +11,9 @@ const Nav = () => {
   
 
   return (
-    <header className="w-full h-[80px] flex justify-between items-center px-4 shadow-xl ">
+    <header className="w-full h-[80px] flex justify-between items-center px-4 shadow-xl">
       <Link to="/">
-        <h1 className="text-2xl transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">Journey</h1>
+        <h1 className="text-2xl font-bold transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 ">Journey</h1>
       </Link>
 
       <nav>

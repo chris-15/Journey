@@ -4,7 +4,7 @@ import { FaComment } from "react-icons/fa";
 const PostList = ({ posts, title }) => {
   if (!posts || !posts.length) {
     return (
-      <div className="h-screen flex justify-center items-center">
+      <div className="flex justify-center items-center my-auto">
         <h3 className="text-5xl font-bold mt-12">No Posts Yet</h3>
       </div>
     );
@@ -44,7 +44,7 @@ const PostList = ({ posts, title }) => {
                   </div>
 
                   <div className="flex justify-between items-center my-2 pt-2">
-                  <p className="mr-2 text-black font-extrabold hover:text-[#40c3c2]">
+                  <p className="text-black font-extrabold hover:text-[#40c3c2] capitalize">
                         <Link to={`/profile/${post.username}`}>
                           {post.username}
                         </Link>
