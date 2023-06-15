@@ -3,8 +3,9 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-import { useQuery } from "@apollo/client";
+import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_POST } from "../utils/queries";
+import { DELETE_POST } from "../utils/mutations";
 import Auth from "../utils/auth";
 
 import CommentList from "../components/CommentList";
@@ -13,13 +14,26 @@ import CommentForm from "../components/CommentForm";
 const SinglePost = () => {
   const { id: postId } = useParams();
 
-  const { loading, data } = useQuery(QUERY_POST, {
+  const { loading, data, } = useQuery(QUERY_POST, {
     variables: { id: postId },
   });
 
   const post = data?.post || {};
 
-  //console.log(post.comments);
+ // console.log(postId);
+
+  const [deletePost, {error}] = useMutation(DELETE_POST);
+
+  const handleDeletePost = async () => {
+    try {
+      await deletePost({ variables: { postId: post._id } });
+      console.log(deletePost)
+      
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
 
   if (loading) {
     return <div>Loading...</div>;
@@ -82,7 +96,30 @@ const SinglePost = () => {
             </div>
           </div>
 
+
+
+          {/* Delete post button */}
+          {Auth.loggedIn() && Auth.getProfile().data.username === post.username && (
+            <div className="flex justify-end mt-4">
+              <button
+                className="flex items-center text-[#40c3c2] hover:underline"
+                onClick={handleDeletePost}
+              >
+                
+                Delete Post
+              </button>
+            </div>
+          )}
+
+
+
+
         </div>
+
+
+        
+
+
 
 
         <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">

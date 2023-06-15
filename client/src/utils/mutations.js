@@ -58,17 +58,20 @@ export const ADD_COMMENT = gql`
 
 export const DELETE_POST = gql`
   mutation deletePost($postId: ID!) {
-    deletedPost(postId: $postId) {
+    deletePost(postId: $postId) {
+    _id
+    postText
+    postTitle
+    createdAt
+    category
+    username
+    commentCount
+    comments {
       _id
-      postText
-      postTitle
+      commentText
       createdAt
-      category
       username
-      commentCount
-      comments {
-        _id
-      }
     }
+  }
   }
 `;

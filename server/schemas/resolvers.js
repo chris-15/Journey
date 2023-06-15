@@ -75,16 +75,16 @@ const resolvers = {
     },
     deletePost: async (parent, { postId }, context) => {
       if(context.user) {
-        const deletedPost = await Post.findOneAndDelete({
-          _id: postId,
-          username: context.user.username
-        });
+        const post = await Post.findById(postId);
 
         await User.findByIdAndUpdate(
           { _id: context.user._id},
           { $pull: { posts: postId } },
           { new: true }
         )
+
+        const deletedPost = await Post.findByIdAndDelete(postId);
+        //console.log(deletedPost);
         return deletedPost
       }
     },
