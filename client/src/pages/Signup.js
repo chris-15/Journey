@@ -4,6 +4,7 @@ import { ADD_USER } from "../utils/mutations";
 import Auth from "../utils/auth";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import heroImg from "../assets/photos/hero.jpg";
 
 const Signup = () => {
   const [formState, setFormState] = useState({
@@ -41,7 +42,7 @@ const Signup = () => {
   // settings for the framer motion div to transition to the page
   const pageVariants = {
     initial: {
-      opacity: 0,
+      opacity: 0.75,
     },
     enter: {
       opacity: 1,
@@ -64,10 +65,17 @@ const Signup = () => {
       exit="exit"
       variants={pageVariants}
     >
-      <main className="grid grid-cols-1 h-[calc(100vh-80px)]  w-full">
+      <main className="grid grid-cols-1 h-[calc(100vh-80px)]  w-full relative">
+      <div className="absolute inset-0">
+            <img
+              src={heroImg}
+              alt="Group Therapy"
+              className="w-full h-full object-cover"
+            />
+          </div>
         <div className="flex flex-col justify-center">
           <form
-            className=" max-w-[300px] sm:max-w-[400px]  w-full mx-auto border-solid bg-white p-4 rounded-lg shadow-gray-500 shadow-lg "
+            className=" max-w-[300px] sm:max-w-[400px]  w-full mx-auto border-solid bg-white p-4 rounded-lg shadow-gray-500 shadow-lg z-50"
             onSubmit={handleFormSubmit}
           >
             <h2 className="text-4xl font-bold text-center py-6">
