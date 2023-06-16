@@ -87,6 +87,7 @@ const SinglePost = () => {
             </Link>
           </div>
 
+          {/* delete button if user is logged in  */}
           {Auth.loggedIn() &&
             Auth.getProfile().data.username === post.username && (
               <div className=" mr-8">
@@ -129,18 +130,6 @@ const SinglePost = () => {
             </div>
           </div>
 
-          {/* Delete post button */}
-          {Auth.loggedIn() &&
-            Auth.getProfile().data.username === post.username && (
-              <div className="flex justify-center mt-4">
-                <button
-                  className="px-4 py-2 text-white bg-red-500 font-semibold rounded-md "
-                  onClick={handleDeletePost}
-                >
-                  Delete Post
-                </button>
-              </div>
-            )}
         </div>
 
         {/* comment section */}
