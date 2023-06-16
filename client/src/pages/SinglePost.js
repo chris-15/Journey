@@ -14,17 +14,16 @@ import CommentForm from "../components/CommentForm";
 const SinglePost = () => {
   const { id: postId } = useParams();
 
-  const { loading, data, } = useQuery(QUERY_POST, {
+  const { loading, data } = useQuery(QUERY_POST, {
     variables: { id: postId },
   });
 
   const post = data?.post || {};
 
- // console.log(postId);
+  // console.log(postId);
 
-  const [deletePost, {error}] = useMutation(DELETE_POST, {
+  const [deletePost] = useMutation(DELETE_POST, {
     update(cache, { data: { deletePost } }) {
-
       const { posts } = cache.readQuery({ query: QUERY_POSTS });
 
       const updatedPosts = posts.filter((post) => post._id !== deletePost._id);
@@ -33,20 +32,21 @@ const SinglePost = () => {
         data: { posts: updatedPosts },
       });
     },
-
-    
   });
+
+ 
 
   const handleDeletePost = async () => {
     try {
       await deletePost({ variables: { postId: post._id } });
-      console.log(deletePost)
-      
+      console.log(deletePost);
+      //navigate to the profile page
+      //this reloads the page so it temporarilty fixes the posts not displaying correctly after deletion
+      window.location.href = "/profile";
     } catch (err) {
       console.error(err);
     }
   };
-
 
   if (loading) {
     return <div>Loading...</div>;
@@ -95,10 +95,11 @@ const SinglePost = () => {
             <p className="text-sm text-gray-500 mb-2">
               {post.createdAt.split(" at")[0]}
             </p>
-            <h2 className="text-5xl font-semibold text-center mb-4">{post.postTitle}</h2>
+            <h2 className="text-5xl font-semibold text-center mb-4">
+              {post.postTitle}
+            </h2>
             <p className=" text-black font-extrabold capitalize hover:text-[#40c3c2]">
-                <Link to={`/profile/${post.username}`}>{post.username}</Link>
-              
+              <Link to={`/profile/${post.username}`}>{post.username}</Link>
             </p>
           </div>
 
@@ -109,31 +110,19 @@ const SinglePost = () => {
             </div>
           </div>
 
-
-
           {/* Delete post button */}
-          {Auth.loggedIn() && Auth.getProfile().data.username === post.username && (
-            <div className="flex justify-end mt-4">
-              <button
-                className="flex items-center text-[#40c3c2] hover:underline"
-                onClick={handleDeletePost}
-              >
-                
-                Delete Post
-              </button>
-            </div>
-          )}
-
-
-
-
+          {Auth.loggedIn() &&
+            Auth.getProfile().data.username === post.username && (
+              <div className="flex justify-end mt-4">
+                <button
+                  className="flex items-center text-[#40c3c2] hover:underline"
+                  onClick={handleDeletePost}
+                >
+                  Delete Post
+                </button>
+              </div>
+            )}
         </div>
-
-
-        
-
-
-
 
         <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
           <div className="">
