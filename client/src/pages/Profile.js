@@ -60,7 +60,7 @@ const Profile = () => {
         exit="exit"
         variants={pageVariants}
       >
-        <main className=" flex flex-col items-center justify-center h-screen">
+        <main className=" flex flex-col items-center justify-center h-[calc(100vh-80px)]">
           <h4 className="text-2xl text-center">
             You need to be logged in to use this page.
           </h4>
