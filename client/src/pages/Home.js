@@ -51,7 +51,7 @@ const Home = () => {
     >
       <main className="grid grid-cols-1 w-full">
         {/* hero section- needs work  */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 py-16 lg:py-0">
+        {/*  <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 py-16 lg:py-0">
           <div className="flex flex-col justify-center items-center px-4">
             <h1 className="text-4xl md:text-5xl font-bold mb-4">Journey</h1>
             <p className="text-lg mb-6 text-center text-gray-500">Welcome to Journey, a safe space for cancer warriors. Here, you can freely express your triumphs and setbacks without judgment. Connect with others who understand and provide unwavering support. Share your story, inspire others, and be inspired. Start your courageous journey today.</p>
@@ -61,6 +61,27 @@ const Home = () => {
           </div>
           <div>
             <img src={heroImg} alt="Group Therapy" className="w-full h-auto"/>
+          </div>
+        </div> */}
+
+        <div className="relative">
+          <div className="absolute inset-0">
+            <img
+              src={heroImg}
+              alt="Group Therapy"
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative flex flex-col justify-center items-center px-4 md:px-8 py-16 md:py-20 ">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+              Journey
+            </h1>
+            <p className="text-lg mb-6 text-white">
+            Welcome to Journey, a safe space for cancer warriors. Here, you can freely express your triumphs and setbacks without judgment. Connect with others who understand and provide unwavering support. Share your story, inspire others, and be inspired. Start your courageous journey today.
+            </p>
+            <h2 className="text-2xl">
+                <Link to={"/profile"} className="px-4 py-2 text-white font-semibold rounded-xl bg-[#0081a7] hover:underline hover:bg-gradient-to-r from-[#0081a7] to-[#40c3c2]">Get Started</Link>
+            </h2>
           </div>
         </div>
 

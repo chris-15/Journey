@@ -64,7 +64,7 @@ const Signup = () => {
       exit="exit"
       variants={pageVariants}
     >
-      <main className="grid grid-cols-1 h-screen w-full">
+      <main className="grid grid-cols-1 h-[calc(100vh-80px)]  w-full">
         <div className="flex flex-col justify-center">
           <form
             className=" max-w-[300px] sm:max-w-[400px]  w-full mx-auto border-solid bg-white p-4 rounded-lg shadow-gray-500 shadow-lg "
