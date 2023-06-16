@@ -69,7 +69,7 @@ const Login = () => {
       <main className="grid grid-cols-1 h-screen w-full">
         <div className="flex flex-col justify-center">
           <form
-            className="max-w-[300px] sm:max-w-[400px] w-full mx-auto border-solid bg-white p-4 rounded-lg "
+            className="max-w-[300px] sm:max-w-[400px] w-full mx-auto border-solid bg-white p-4 rounded-lg shadow-gray-500 shadow-lg "
             onSubmit={handleFormSubmit}
           >
             <h2 className="text-4xl font-bold text-center py-6">Cancer Blog</h2>
