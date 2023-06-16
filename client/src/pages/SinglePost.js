@@ -2,6 +2,8 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { BsTrash3 } from "react-icons/bs";
+import { Tooltip } from "react-tooltip";
 
 import { useQuery, useMutation } from "@apollo/client";
 import { QUERY_POST, QUERY_POSTS } from "../utils/queries";
@@ -33,8 +35,6 @@ const SinglePost = () => {
       });
     },
   });
-
- 
 
   const handleDeletePost = async () => {
     try {
@@ -79,10 +79,28 @@ const SinglePost = () => {
       variants={pageVariants}
     >
       <main className="grid grid-cols-1 w-full">
-        <div className="m-4 font-bold hover:text-[#40c3c2] hover:underline text-lg">
-          <Link to="/">
-            <h4> ← Return Home</h4>
-          </Link>
+        <div className="flex justify-between items-center">
+          <div className="m-4 font-bold hover:text-[#40c3c2] hover:underline text-lg">
+            <Link to="/">
+              <h4> ← Return Home</h4>
+            </Link>
+          </div>
+
+          {Auth.loggedIn() &&
+            Auth.getProfile().data.username === post.username && (
+              <div className="mt-4 mr-8">
+                <button
+                  className="hover:text-red-500"
+                  data-tooltip-id="delete-button"
+                  data-tooltip-content="Delete Post!"
+                  data-tooltip-place="left"
+                  onClick={handleDeletePost}
+                >
+                  <BsTrash3 size={35} />
+                </button>
+                <Tooltip id="delete-button"/>
+              </div>
+            )}
         </div>
 
         <div className="max-w-[400px] sm:max-w-[600px] lg:max-w-[800px] w-full mx-auto py-6">
@@ -113,9 +131,9 @@ const SinglePost = () => {
           {/* Delete post button */}
           {Auth.loggedIn() &&
             Auth.getProfile().data.username === post.username && (
-              <div className="flex justify-end mt-4">
+              <div className="flex justify-center mt-4">
                 <button
-                  className="flex items-center text-[#40c3c2] hover:underline"
+                  className="px-4 py-2 text-white bg-red-500 font-semibold rounded-md "
                   onClick={handleDeletePost}
                 >
                   Delete Post
@@ -124,6 +142,7 @@ const SinglePost = () => {
             )}
         </div>
 
+        {/* comment section */}
         <div className="max-w-[400px] sm:max-w-[600px] md:max-w-[800px] w-full mx-auto py-6">
           <div className="">
             {Auth.loggedIn() ? (
