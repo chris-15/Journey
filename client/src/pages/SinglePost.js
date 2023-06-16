@@ -79,8 +79,9 @@ const SinglePost = () => {
       variants={pageVariants}
     >
       <main className="grid grid-cols-1 w-full">
-        <div className="flex justify-between items-center">
-          <div className="m-4 font-bold hover:text-[#40c3c2] hover:underline text-lg">
+        <div className="flex justify-between items-center my-4">
+
+          <div className="ml-4 font-bold hover:text-[#40c3c2] hover:underline text-lg">
             <Link to="/">
               <h4> ← Return Home</h4>
             </Link>
@@ -88,7 +89,7 @@ const SinglePost = () => {
 
           {Auth.loggedIn() &&
             Auth.getProfile().data.username === post.username && (
-              <div className="mt-4 mr-8">
+              <div className=" mr-8">
                 <button
                   className="hover:text-red-500"
                   data-tooltip-id="delete-button"
@@ -96,7 +97,7 @@ const SinglePost = () => {
                   data-tooltip-place="left"
                   onClick={handleDeletePost}
                 >
-                  <BsTrash3 size={35} />
+                  <BsTrash3 size={30} />
                 </button>
                 <Tooltip id="delete-button"/>
               </div>
