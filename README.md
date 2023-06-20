@@ -33,7 +33,7 @@ Below is a preview of the deployed application:
  
 ## Usage
  
- You can find the deployed applicaion [here]().
+ You can find the deployed applicaion [here](https://journey.up.railway.app/).
 
 ## Credits
 
